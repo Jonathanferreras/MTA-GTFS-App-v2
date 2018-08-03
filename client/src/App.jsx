@@ -1,11 +1,12 @@
 import React, { Component, Fragment } from 'react';
-import { 
-  BrowserRouter as Router, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import { PropTypes } from 'prop-types';
 
 import { 
   Nav,
-  Clock, 
+  Clock,
+  TrainRouteSelector, 
+  TrainLine
 } from './components';
 
 class App extends Component {
@@ -14,7 +15,7 @@ class App extends Component {
       <Router>
         <Fragment>
           <Route exact path="/" component={ Layout } />
-          <Route path="/train/:train_id" render={ Layout } />  
+          <Route path="/train/:train_id" component={ Layout } />  
         </Fragment>
       </Router>
     );
@@ -25,24 +26,12 @@ const Layout = ({ match }) => {
   return(
     <Fragment>
       <Nav />
-      <Clock />  
+      <Clock />
+      <TrainRouteSelector/>
+      {/* conditional render */}
+      { match.params.train_id && <TrainLine /> }  
     </Fragment>
   );
-
-
-  // if(match.params.train_id){
-  //   return(
-  //     <div>
-  //       { match.params.train_id }
-  //     </div>
-  //   );
-  // } else {
-  //   return (
-  //     <div>
-  //       <h2>Hello world</h2>
-  //     </div>
-  //   );
-  // }
 };
 
 Layout.propTypes = {

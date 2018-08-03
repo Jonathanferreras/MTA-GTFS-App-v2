@@ -1,0 +1,12 @@
+@import '../../styles/colors';
+@import '../../styles/alignment';
+
+.clock {
+  @include flex-wrapper;
+
+  span {
+    @include flex-center;
+    color: $white;
+    font-size: 40px;
+  }
+}

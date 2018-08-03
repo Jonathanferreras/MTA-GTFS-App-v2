@@ -1,0 +1,5 @@
+@import '../../styles/alignment';
+
+.train-line {
+  @include flex-center;
+}

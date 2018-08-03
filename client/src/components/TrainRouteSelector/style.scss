@@ -1,0 +1,9 @@
+@import '../../styles/alignment';
+
+.train-route-selector {
+  @include flex-wrapper;
+
+  span {
+    @include flex-center;
+  }
+}
