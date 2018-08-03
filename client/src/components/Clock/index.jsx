@@ -4,7 +4,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { PropTypes } from 'prop-types';
 
-import { findTimeStamp } from '../../actions/find';
+import { findCurrentTimeStamp } from '../../actions/find';
 import { setClockTime } from '../../actions/set';
 
 import moment from 'moment';
@@ -16,7 +16,7 @@ class Clock extends Component {
     let min = 60 * s;
 
     setInterval(  () => this.props.setClockTime(), ms );
-    setInterval( () => this.props.findTimeStamp(this.props.clock_time), min );
+    setInterval( () => this.props.findCurrentTimeStamp(this.props.clock_time), min );
   }
 
   render() {
@@ -29,7 +29,7 @@ class Clock extends Component {
 }
 
 Clock.propTypes = {
-  findTimeStamp: PropTypes.func,
+  findCurrentTimeStamp: PropTypes.func,
   setClockTime: PropTypes.func,
   clock_time: PropTypes.string,
   current_time_stamp: PropTypes.string,
@@ -40,4 +40,4 @@ const mapStateToProps = state => ({
   current_time_stamp: state.find.current_time_stamp
 });
 
-export default connect(mapStateToProps, { findTimeStamp, setClockTime })(Clock);
+export default connect(mapStateToProps, { findCurrentTimeStamp, setClockTime })(Clock);

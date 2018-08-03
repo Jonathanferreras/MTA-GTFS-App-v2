@@ -10,7 +10,7 @@ router.get('/all', async (req, res, next) => {
     res.send(train_trips);
   } 
   catch (error) {
-    console.log('Error Occurred: ' + error);
+    console.log('Error Occurred while getting train trips: ' + error);
     res.status(500).send();
   }
 });

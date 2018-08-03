@@ -1,5 +1,5 @@
 import React, { Component, Fragment } from 'react';
-import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Route } from "react-router-dom";
 import { PropTypes } from 'prop-types';
 
 import { 
@@ -15,7 +15,7 @@ class App extends Component {
       <Router>
         <Fragment>
           <Route exact path="/" component={ Layout } />
-          <Route path="/train/:train_id" component={ Layout } />  
+          <Route path="/train/:train_id" render={ Layout } />  
         </Fragment>
       </Router>
     );
@@ -29,7 +29,7 @@ const Layout = ({ match }) => {
       <Clock />
       <TrainRouteSelector/>
       {/* conditional render */}
-      { match.params.train_id && <TrainLine /> }  
+      { match.params.train_id && <TrainLine train={ match.params.train_id } /> }  
     </Fragment>
   );
 };

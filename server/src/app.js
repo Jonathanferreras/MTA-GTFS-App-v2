@@ -7,7 +7,8 @@ import logger from 'morgan';
 import appRoot from 'app-root-path';
 import { 
   rootRouter, 
-  trainTripRouter 
+  trainTripRouter,
+  trainRouteRouter, 
 } from './routes';
 
 const production = process.env.NODE_ENV.trim() === 'production';
@@ -23,6 +24,7 @@ app.use(cookieParser());
 
 app.use('/', rootRouter);
 app.use('/api/train_trip', trainTripRouter);
+app.use('/api/train_route', trainRouteRouter);
 
 // catch 404 and forward to error handler
 app.use((req, res, next) => {

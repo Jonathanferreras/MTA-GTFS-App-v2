@@ -2,7 +2,7 @@ import moment from 'moment';
 
 import { 
   FIND_SELECTED_TRAIN_ROUTE,
-  FIND_TIME_STAMP, 
+  FIND_CURRENT_TIME_STAMP, 
 } from '../constants/types';
 
 const initialState = {
@@ -15,7 +15,7 @@ export default function(state = initialState, action) {
     case FIND_SELECTED_TRAIN_ROUTE:
       return { ...state, train_route: action.payload };
 
-    case FIND_TIME_STAMP:
+    case FIND_CURRENT_TIME_STAMP:
       return { ...state, current_time_stamp: action.payload };
       
     default:
