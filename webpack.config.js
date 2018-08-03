@@ -17,6 +17,7 @@ module.exports = (env, argv) => {
     output: {
       filename: 'bundle.js',
       path: path.join(__dirname, './client/dist'),
+      publicPath: '/',       
     },
 
     //Allow importing files ending in these extensions
