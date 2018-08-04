@@ -1,11 +1,11 @@
 import express from 'express';
-import { trainRoute } from '../controllers';
+import { trainRoute as controller } from '../controllers';
 
 const router = express.Router();
 
 router.get('/all', async (req, res, next) => {
   try {
-    let train_routes = await trainRoute.getAllTrainRoutes();
+    let train_routes = await controller.getAllTrainRoutes();
 
     res.send(train_routes);
   } 

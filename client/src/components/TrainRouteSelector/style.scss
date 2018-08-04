@@ -4,23 +4,15 @@
 .train-route-selector {
   display: flex;
   flex-direction: column;
-  // @include flex-wrapper;
-  // background-color: $gray;
-  // border-radius: 20px;
-  // margin-top: 1rem;
-
-  // span {
-  //   @include flex-center;
-  // }
 }
 
 .selector-toggle-btn {
   margin-left: auto;
-  color: $white !important;
-  border-color: $white !important;
+  color: $white;
+  border-color: $white;
 
   &:hover {
-    border-color: #17a2b8 !important;
+    border-color: #17a2b8;
   }
 }
 
@@ -38,9 +30,9 @@
 .train-route-btn {
   width: 50px;
   height: 50px;
-  border-radius: 50% !important;
+  border-radius: 50%;
   margin: 10px 5px;
-  border: 1px solid rgba(255, 255, 255, 0) !important;
+  border: 1px solid rgba(255, 255, 255, 0);
   box-shadow: 0px 2px 3px -1px rgba(0, 0, 0, 0.5);
 
   &:hover {

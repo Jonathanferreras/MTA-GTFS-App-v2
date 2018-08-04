@@ -50,7 +50,6 @@ class TrainRouteSelector extends Component {
                         onClick={ () => {
                           this.toggle();
                           this.props.findSelectedTrainRoute(train_route); 
-                          setTimeout(() => { console.log('collapsing'); }, 3000); 
                           // this.props.fetchTrainTrips(train_route.route_id);
                         }}
                       />
@@ -61,6 +60,7 @@ class TrainRouteSelector extends Component {
             </div>
           </Collapse>
         </div>
+        <hr/>
       </Container>
     );
   }
