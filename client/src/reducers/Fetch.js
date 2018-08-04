@@ -17,11 +17,15 @@ export default function(state = initialState, action) {
     case FETCH_TRAIN_ROUTES:
       return { ...state, train_routes: action.payload };
 
-    case FETCH_TRAIN_STOPS:
-      return { ...state, train_stops: action.payload };
+    // case FETCH_TRAIN_STOPS:
+    //   return { ...state, train_stops: action.payload };
 
     case FETCH_TRAIN_TRIPS:
-      return { ...state, train_trips: action.payload };
+      return { 
+        ...state, 
+        train_trips: action.payload,
+        train_stops: action.payload.map(trip => [trip.stop_name, trip.stop_id]) 
+      };
 
     case FETCH_GOOGLE_MAPS_API_KEY:
       return { ...state, google_maps_api_key: action.payload.key };

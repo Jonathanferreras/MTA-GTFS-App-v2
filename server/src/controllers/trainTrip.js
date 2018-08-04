@@ -37,6 +37,8 @@ export const getTrainTripsByTrain = async (train_route_id) => {
 
     train_trips.schedule[train_stop.stop_id].stop_id = train_stop.stop_id;
     train_trips.schedule[train_stop.stop_id].stop_name = train_stop.stop_name;
+    train_trips.schedule[train_stop.stop_id].stop_lat = train_stop.stop_lat;
+    train_trips.schedule[train_stop.stop_id].stop_lon = train_stop.stop_lon;
     train_trips.schedule[train_stop.stop_id].N = stop.N.filter(stop => stop.routeId == train_route_id);
     train_trips.schedule[train_stop.stop_id].S = stop.S.filter(stop => stop.routeId == train_route_id);
   });
