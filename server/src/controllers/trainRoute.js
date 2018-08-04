@@ -1,23 +1,23 @@
 import { TrainRouteModel } from '../models';
 
 export const getAllTrainRoutes = async () => {
-  let t = await TrainRouteModel.find({}, (error) => {
+  let train_routes = await TrainRouteModel.find({}, error => {
     if(error){
       console.log('Error occurred while fetching all train routes: ' + error);
     }
   });
 
-  return t.filter(train_route => !train_route.route_id.includes("X"));
+  return train_routes.filter(train_route => !train_route.route_id.includes("X"));
 };
 
 export const getTrainRoute = async (train_route_id) => {
-  let t = TrainRouteModel.findOne({'route_id' : train_route_id }, (error, train_route) => {
-    if(error){
-      console.log('Error occurred while fetching train route: ' + error);
-    }
-  }); 
+  // let train_route = TrainRouteModel.findOne({'route_id' : train_route_id }, error => {
+  //   if(error){
+  //     console.log('Error occurred while fetching train route: ' + error);
+  //   }
+  // }); 
 
-  return t;
+  // return train_route;
 };
 
-export default { getAllTrainRoutes, getTrainRoute };
+export default { getAllTrainRoutes, getTrainRoute }; 
