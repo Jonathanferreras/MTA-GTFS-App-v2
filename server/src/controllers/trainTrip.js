@@ -22,7 +22,7 @@ export const getTrainTripsByTrain = async (train_route_id) => {
 
   let feed_id = Object.keys(train_feeds).find(key => train_feeds[key].includes(train_route_id));
   
-  let train_trips = await tripUpdate(train_route, feed_id);
+  let train_trips = await tripUpdate(train_route_id, feed_id);
 
   return train_trips;
 };
